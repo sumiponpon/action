@@ -4,16 +4,18 @@ jobs:
   phpstantest:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.2'
-          tools: composer, phpstan
+          tools: composer, cs2pr, phpstan
           coverage: none
       - name: Composer install
-        run: composer install --prefer-dist --no-progress
-      - name: PHPStan install
-        run: composer require --dev phpstan/phpstan
+#        run: composer install --prefer-dist --no-progress
+        run: composer install
+#      - name: PHPStan install
+#        run: composer require --dev phpstan/phpstan
       - name: Run PHPStan
-        run: phpstan analyze --memory-limit=-1
+        run: vendor/bin/phpstan analyze --memory-limit=-1

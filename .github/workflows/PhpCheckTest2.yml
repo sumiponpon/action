@@ -1,0 +1,19 @@
+name: PHPStan_test2
+on: [push]
+jobs:
+  # 静的解析
+  phpstantest2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: rito328/composite-run-steps-action-laravel-setup@v1
+      # 1. reviewdog の setup action を追加
+      - uses: reviewdog/action-setup@v1
+        with:
+          reviewdog_version: latest
+      - name: analyse
+        env:
+          # 2. reviewdog が コメントを書き込めるように token をセットする
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # 3. 静的解析の結果を reviewdog へ渡す
+        run: ./vendor/bin/phpstan analyse --error-format=raw --no-progress | reviewdog -reporter=github-pr-review -f=phpstan
