@@ -1,0 +1,14 @@
+{
+    "name": "vendor/action",
+    "description": "description",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "sumiponpon",
+            "email": "email@example.com"
+        }
+    ],
+    "require": {
+    }
+}
