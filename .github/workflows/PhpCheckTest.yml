@@ -11,4 +11,4 @@ jobs:
           php-version: '5.6'
           tools: phpstan
       - name: Run PHPStan
-        run: phpstan analyze --memory-limit=-1
+        run: phpstan analyze src
