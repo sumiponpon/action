@@ -9,11 +9,6 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '5.6'
-          tools: composer, phpstan
-          coverage: none
-      - name: Composer install
-        run: composer install --prefer-dist --no-progress
-      - name: PHPStan install
-        run: composer require --dev phpstan/phpstan
+          tools: phpstan
       - name: Run PHPStan
         run: phpstan analyze --memory-limit=-1
