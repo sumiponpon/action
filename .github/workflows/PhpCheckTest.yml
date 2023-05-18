@@ -1,0 +1,17 @@
+name: PHPStan_test
+on: [push]
+jobs:
+  phpstantest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '5.6'
+          tools: composer, phpstan
+          coverage: none
+      - name: Composer install
+        run: composer install
+      - name: Run PHPStan
+        run: vendor/bin/phpstan analyze --memory-limit=-1
