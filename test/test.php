@@ -21,16 +21,16 @@ class RegularEmployee
         $this->name = $name;
     }
     /**
-     * @return mixed
+     * @return int
      */
-    public function getEmployeeId(): mixed
+    public function getEmployeeId(): int
     {
         return $this->employee_id;
     }
     /**
-     * @return string
+     * @return mixed
      */
-    public function getName(): string
+    public function getName(): mixed
     {
         return $this->name;
     }
