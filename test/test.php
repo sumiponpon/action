@@ -11,7 +11,6 @@ class RegularEmployee
      * @var string
      */
     private $name;
-
     /**
      * @param $employee_id
      * @param $name
@@ -21,7 +20,6 @@ class RegularEmployee
         $this->employee_id = $employee_id;
         $this->name = $name;
     }
-
     /**
      * @return mixed
      */
@@ -29,15 +27,6 @@ class RegularEmployee
     {
         return $this->employee_id;
     }
-
-    /**
-     * @param int $employee_id
-     */
-    public function setEmployeeId(int $employee_id): void
-    {
-        $this->employee_id = $employee_id;
-    }
-
     /**
      * @return string
      */
@@ -45,18 +34,7 @@ class RegularEmployee
     {
         return $this->name;
     }
-
-    /**
-     * @param $name
-     */
-    public function setName($name): void
-    {
-        $this->name = $name;
-    }
-
 }
-
 $employee = new RegularEmployee("1","山田");
-
 echo $employee->getEmployeeId();
 echo $employee->getName();
