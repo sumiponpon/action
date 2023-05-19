@@ -22,7 +22,7 @@ class RegularEmployee
     /**
      * @return int
      */
-    public function getEmployeeId(): mixed
+    public function getEmployeeId(): int
     {
         return $this->employee_id;
     }
