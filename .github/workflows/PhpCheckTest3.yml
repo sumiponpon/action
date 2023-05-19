@@ -1,5 +1,5 @@
 #  https://zenn.dev/peraichi_blog/articles/01fy360dgteynbfv5tj3q6smv5
-name: PHPStan_test2
+name: PHPStan_test3
 on: [push]
 jobs:
   phpstantest:
