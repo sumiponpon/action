@@ -1,5 +1,7 @@
 name: PHPStanTest
 on: [pull_request]
+permissions:
+  actions: read|write|none
 jobs:
   phpstantest:
     runs-on: ubuntu-latest
