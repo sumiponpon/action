@@ -1,4 +1,4 @@
-name: PHPStan_test
+name: PHPStanTest
 on: [push]
 jobs:
   phpstantest:
