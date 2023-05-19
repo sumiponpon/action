@@ -1,6 +1,6 @@
 <?php
 
-class RegularEmployee
+class RegularEmployee2
 {
     /**
      * @var int
@@ -34,6 +34,6 @@ class RegularEmployee
         return $this->name;
     }
 }
-$employee = new RegularEmployee("1","山田");
+$employee = new RegularEmployee2("1","山田");
 echo $employee->getEmployeeId();
 echo $employee->getName();
