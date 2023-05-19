@@ -5,17 +5,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          tools: composer, cs2pr, phpstan
-          coverage: none
+          php-version: '7.2.34'
+      - uses: reviewdog/action-setup@v1
+        with:
+          reviewdog_version: latest
       - name: Composer install
-#        run: composer install --prefer-dist --no-progress
         run: composer install
-#      - name: PHPStan install
-#        run: composer require --dev phpstan/phpstan
+      - name: phpstan install
+        run: composer require phpstan/phpstan
       - name: Run PHPStan
-        run: vendor/bin/phpstan analyze --memory-limit=-1
+#        run: vendor/bin/phpstan analyze test --level max --memory-limit=-1
+        env:
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          run: vendor/bin/phpstan analyse test --level max --memory-limit=-1 --error-format=raw --no-progress | reviewdog -reporter=github-pr-review -f=phpstan
