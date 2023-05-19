@@ -1,3 +1,4 @@
+#  https://zenn.dev/peraichi_blog/articles/01fy360dgteynbfv5tj3q6smv5
 name: PHPStan_test2
 on: [push]
 jobs:
@@ -13,6 +14,8 @@ jobs:
       - uses: reviewdog/action-setup@v1
         with:
           reviewdog_version: latest
+      - name: Composer install
+        run: composer install
       - name: phpstan install
         run: composer require phpstan/phpstan
       - name: run phpstan and reviewdog
