@@ -1,23 +1,5 @@
 <?php
 
-echoo "sumiponpon";
-echoo "sumiponpon";
-echoo "sumiponpon";
-echoo "sumiponpon";
-echoo "sumiponpon";
-echoo "sumiponpon";
-echoo "sumiponpon";
-echoo "sumiponpon";
-echoo "sumiponpon";
-echoo "sumiponpon";
-echoo "sumiponpon";
-echoo "sumiponpon";
-echoo "sumiponpon";
-echoo "sumiponpon";
-echoo "sumiponpon";
-echoo "sumiponpon";
-echo "sumiponpon";
-
 
 class RegularEmployee
 {
@@ -41,7 +23,7 @@ class RegularEmployee
     }
 
     /**
-     * @return int
+     * @return mixed
      */
     public function getEmployeeId(): mixed
     {
@@ -65,9 +47,9 @@ class RegularEmployee
     }
 
     /**
-     * @param string $name
+     * @param $name
      */
-    public function setName(string $name): void
+    public function setName($name): void
     {
         $this->name = $name;
     }
