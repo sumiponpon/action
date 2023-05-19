@@ -23,5 +23,5 @@ jobs:
 #        run: ./vendor/bin/phpstan analyse --error-format=raw --no-progress | reviewdog -reporter=github-pr-review -f=phpstan
       - name: Run PHPStan
 #        run: vendor/bin/phpstan analyze --memory-limit=-1
-        run: vendor/bin/phpstan analyze test --memory-limit=-1
+        run: vendor/bin/phpstan analyze test --level max --memory-limit=-1
 #        run: vendor/bin/phpstan analyze src
