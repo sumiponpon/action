@@ -18,4 +18,4 @@ jobs:
       - name: PHPStan install
         run: composer require --dev phpstan/phpstan
       - name: Run PHPStan
-        run: vendor/bin/phpstan analyze --memory-limit=-1
+        run: vendor/bin/phpstan analyze src
